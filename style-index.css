@@ -1,735 +1,794 @@
 /* RESET */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  /* TIPOGRAFÍA */
-  body {
-    font-family: "Inter", sans-serif; /* Contenido principal */
-    background: #fff;
-    color: #333;
-  }
-  
-  h1,
-  h2,
-  h3 {
-    font-family: "Poppins", sans-serif; /* Títulos */
-    font-weight: 700;
-  }
-  
-  .navbar a {
-    font-family: "Outfit", sans-serif; /* Enlaces de navegación */
-  }
-  
-  /* Variables de color (opcional) */
-  :root {
-    --primary-color: #4285f4; /* color principal */
-    --text-color: #333;
-    --bg-color: #fff;
-    --alt-bg-color: #f8f9fa;
-    --header-height: 70px;
-  }
-  
-  /* Encabezado */
-  .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1rem;
-    height: var(--header-height);
-    background: #fff;
-    position: relative;
-  }
-  
-  .logo img {
-    height: 40px;
-  }
-  
-  .navbar a {
-    text-decoration: none;
-    color: #333;
-    padding: 10px 15px;
-    transition: color 0.3s ease, border-bottom 0.3s ease;
-    position: relative;
-    
-  }
-  
-  .navbar a:hover {
-    color: #4285f4;
-  }
-  
-  .navbar a:hover::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #4285f4;
-    animation: slideIn 0.3s forwards;
-  }
-  
-  
-  /* Botón de Contacto (aparte) */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
+/* TIPOGRAFÍA */
+body {
+  font-family: "Inter", sans-serif; /* Contenido principal */
+  background: #fff;
+  color: #333;
+}
 
-  .contact-btn {
-    background-color: #333;
-    color: #fff !important;
-    border-radius: 4px;
-    padding: 10px 20px;
-    text-align: center;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
-    margin-left: auto; /* Mueve el botón a la izquierda */
-    margin-right: 1rem;
-    
+h1,
+h2,
+h3 {
+  font-family: "Poppins", sans-serif; /* Títulos */
+  font-weight: 700;
+}
+
+.navbar a {
+  font-family: "Outfit", sans-serif; /* Enlaces de navegación */
+}
+
+/* Variables de color (opcional) */
+:root {
+  --primary-color: #4285f4; /* color principal */
+  --text-color: #333;
+  --bg-color: #fff;
+  --alt-bg-color: #f8f9fa;
+  --header-height: 70px;
+}
+
+/* Encabezado */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  height: var(--header-height);
+  background: #fff;
+  position: relative;
+}
+
+.logo img {
+  height: 40px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
+  position: relative;
+}
+
+.navbar a:hover {
+  color: #4285f4;
+}
+
+.navbar a:hover::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #4285f4;
+  animation: slideIn 0.3s forwards;
+}
+
+/* Botón de Contacto (aparte) */
+.contact-btn {
+  background-color: #333;
+  color: #fff !important;
+  border-radius: 4px;
+  padding: 10px 20px;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  margin-left: auto; /* Mueve el botón a la izquierda */
+  margin-right: 1rem;
 }
 .contact-btn:hover {
-    background-color: #555;
+  background-color: #555;
 }
-  
-  @keyframes slideIn {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
+
+@keyframes slideIn {
+  from {
+    width: 0;
   }
-  
-  /* Navegación */
-  .navbar {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-  }
-  
-  /* Ícono Hamburguesa (siempre visible, 
-     pero se usa en móvil para toggle) */
-     
-  .menu-icon {
-    display: none; /* Por defecto oculto en escritorio */
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-  }
-  
-  /* Líneas del ícono */
-  .menu-icon div {
-    width: 25px; /* Ancho de cada línea */
-    height: 3px; /* Grosor de cada línea */
-    background-color: #333; /* Color de las líneas */
-  }
-  
-  /* Clase que mostrará el menú (en móvil) */
-  .navbar.show {
-    max-height: 300px; /* Ajustar según cuántos links tengas */
-    opacity: 1;
-  }
-  
-  /* --- Media Query para pantallas menores a 768px --- */
-  @media (max-width: 768px) {
-    .menu-icon {
-      display: flex; /* Se muestra en pantallas pequeñas */
-    }
-  
-    /* La navbar en móvil se muestra/oculta con la clase .show */
-    .navbar {
-      position: absolute;
-      top: 60px;
-      right: 0;
-      flex-direction: column;
-      background: #fff;
-      gap: 0.5rem;
-      padding: 1rem;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      max-height: 0; /* Cerrado por defecto */
-      opacity: 0;   /* Cerrado por defecto */
-      overflow: hidden;
-      transition: max-height 0.3s ease, opacity 0.3s ease;
-      z-index: 9999;
-    }
-  }
-  
-  /* HERO */
-  .hero {
-    position: relative;
-    background: url("images/bot-intro.svg") center/cover no-repeat;
-    min-height: calc(100vh - var(--header-height));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: #fff;
-  }
-  
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 1;
-  }
-  
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 600px;
-  }
-  
-  .hero-content h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .hero-content p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
-  }
-  
-  /* Botón hero */
-  .hero-content button {
-    background: white;
-    color: #4285f4;
-    border: none;
-    padding: 1rem 2.5rem; /* Botón grande */
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1.2rem;
-    font-weight: bold;
-    font-family: "Outfit", sans-serif;
-    text-transform: uppercase;
-    transition: background 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  .hero-content button:hover {
-    background: rgb(222, 237, 255);
-    transform: translateY(-2px);
-  }
-  
-  .hero-content button:active {
-    transform: translateY(1px);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* SECCIONES GENERALES */
-  .section {
-    padding: 4rem 2rem;
-    background: var(--bg-color);
-  }
-  
-  .alt-bg {
-    background: var(--alt-bg-color);
-  }
-  
-  .section-title {
-    text-align: center;
-    font-size: 2rem;
-    color: var(--primary-color);
-  }
-  
-  .section-desc {
-    text-align: center;
-    max-width: 700px;
-    margin: 0.5rem auto 3rem auto;
-    color: #666;
-  }
-  
-  /* SECCIÓN SERVICIOS */
-  /* Contenedor general */
-  .cards-grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    align-items: start;
-  }
-  
-  .description-container .heading {
-    font-family: "Poppins", sans-serif;
-    font-size: 1.1rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-  }
-  
-  .description-container .subtitle {
-    font-family: "Poppins", sans-serif;
-    font-size: 1.7rem;
-    color: #333;
-    margin-bottom: 1.5rem;
-  }
-  
-  .description-container .paragraph {
-    font-family: "Inter", sans-serif;
-    color: #666;
-    line-height: 1.6;
-    margin-bottom: 2rem;
-  }
-  
-  .bullet-points {
-    margin-bottom: 2rem;
-  }
-  
-  .bullet-item {
-    display: flex;
-    align-items: start;
-    gap: 1rem;
-    margin-bottom: 1rem;
-  }
-  
-  .bullet-icon {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-  }
-  
-  .bullet-item p {
-    font-family: "Inter", sans-serif;
-    color: #333;
-    margin: 0;
-  }
-  
-  /* Botón de planes */
-  .description-container .button-primary {
-    background: var(--primary-color);
-    color: #fff;
-    padding: 0.8rem 1.5rem;
-    border-radius: 4px;
-    font-family: "Outfit", sans-serif;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-    transition: background 0.3s ease;
-  }
-  
-  .description-container .button-primary:hover {
-    background: #3066c8;
-  }
-  
-  /* Tarjetas de servicios */
-  .services-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-  }
-  
-  .service-card {
-    background: #fff;
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    text-align: left;
-  }
-  
-  .service-card:hover {
-    transform: translateY(-4px);
-  }
-  
-  .service-title {
-    font-family: "Poppins", sans-serif;
-    font-size: 1.2rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-  }
-  
-  .service-description {
-    font-family: "Inter", sans-serif;
-    color: #666;
-    line-height: 1.6;
-  }
-  
-  /* GRID DE CARDS */
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .card {
-    background: #fff;
-    border-radius: 20px;
-    padding: 2rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-  }
-  
-  .card:hover {
-    transform: translateY(-4px);
-  }
-  
-  .card h3 {
-    color: var(--primary-color);
-    margin-bottom: 1rem;
-  }
-  
-  .testimonial p {
-    font-style: italic;
-    font-family: "Poppins", sans-serif;
-  }
-  
-  .testimonial strong {
-    display: block;
-    margin-top: 2rem;
-    color: #888;
-  }
-  
-  /* PLANES */
-  .pricing-section {
-    padding: 4rem 2rem;
-    text-align: center;
-  }
-  
-  .section-title {
-    font-family: "Poppins", sans-serif;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #4285f4;
-  }
-  
-  .section-desc {
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;
-    color: #858a93;
-    margin-bottom: 2rem;
-  }
-  
-  .tab-options {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 4rem;
-    margin-top: 3rem;
-  }
-  
-  .tab-btn {
-    font-family: "Outfit", sans-serif;
-    background: none;
-    border: 2px solid #4285f4;
-    padding: 0.5rem 1rem;
-    color: #4285f4;
-    cursor: pointer;
-    border-radius: 10px;
-    font-size: 1.1rem;
-  }
-  
-  .tab-btn.active {
-    background: #4285f4;
-    color: #fff;
-  }
-  
-  .pricing-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    max-width: 1200px; /* Limita el ancho máximo del contenedor */
-    margin: 0 auto;    /* Centra el contenedor */
-  }
-  
-  .card p {
-    margin-bottom: 1rem; /* Espacio entre la descripción y el enlace */
-  }
-  
-  .card a {
-    display: inline-block; /* Asegura que el enlace tenga su propio espacio */
-    margin-top: 0.5rem;    /* Espacio adicional si es necesario */
-    color: #4285f4;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .card a:hover {
-    color: #3066c8;
-  }
-  
-  /* PLANES - Tarjetas */
-  .price-card {
-    max-width: 100%;
-    margin: 0 auto;
-    background: #fff;
-    border: 2px solid #eee;
-    border-radius: 30px;
-    padding: 2rem;
-    text-align: left;
-    box-shadow: 0 20px 10px rgba(0, 0, 0, 0.1);
-    position: relative;
-  }
-  
-  .price-card.featured {
-    border-color: #4285f4;
-    transform: scale(1.05);
-  }
-  
-  .price-card h1 {
-    font-family: "Poppins", sans-serif;
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-    text-align: left;
-  }
-  
-  .price-card h4 {
-    font-family: "Poppins", sans-serif;
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: #4285f4;
-    text-align: left;
-  }
-  
-  .price-card .price span {
-    font-size: 1rem;
-    color: #666;
-  }
-  
-  .price-card .pricing-text {
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;
-    color: #666;
-    margin-bottom: 1.5rem;
-    text-align: left;
-  }
-  
-  .pricing-features {
-    list-style: none;
-    padding: 0;
-    margin: 1rem 0;
-  }
-  
-  .pricing-features li {
-    font-family: "Inter", sans-serif;
-    margin-bottom: 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: #333;
-  }
-  
-  .pricing-features li::before {
-    content: "✔";
-    font-family: Arial, sans-serif;
-    font-size: 1.2rem;
-    color: #4285f4;
-  }
-  
-  .button-primary {
-    background: #4285f4;
-    color: #fff;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    text-decoration: none;
-    font-family: "Outfit", sans-serif;
-    font-weight: bold;
-    display: inline-block;
-    transition: background 0.3s ease;
-  }
-  
-  .button-primary:hover {
-    background: #3066c8;
-  }
-  
-  .button-primary.featured {
-    background: #3066c8;
-  }
-  
-  /* BLOG */
-  .blog-img {
+  to {
     width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-bottom: 1rem;
   }
-  
-  /* FOOTER */
-  .footer {
-    background: #f2f2f2;
-    text-align: center;
-    padding: 2rem;
-    color: #666;
+}
+
+/* Navegación */
+.navbar {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+/* Ícono Hamburguesa (siempre visible, 
+   pero se usa en móvil para toggle) */
+.menu-icon {
+  display: none; /* Por defecto oculto en escritorio */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+/* Líneas del ícono */
+.menu-icon div {
+  width: 25px; /* Ancho de cada línea */
+  height: 3px; /* Grosor de cada línea */
+  background-color: #333; /* Color de las líneas */
+}
+
+/* Clase que mostrará el menú (en móvil) */
+.navbar.show {
+  max-height: 300px; /* Ajustar según cuántos links tengas */
+  opacity: 1;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  background: url("images/bot-intro.svg") center/cover no-repeat;
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.hero-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+/* Botón hero */
+.hero-content button {
+  background: white;
+  color: #4285f4;
+  border: none;
+  padding: 1rem 2.5rem; /* Botón grande */
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: bold;
+  font-family: "Outfit", sans-serif;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.hero-content button:hover {
+  background: rgb(222, 237, 255);
+  transform: translateY(-2px);
+}
+
+.hero-content button:active {
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* SECCIONES GENERALES */
+.section {
+  padding: 4rem 2rem;
+  background: var(--bg-color);
+}
+
+.alt-bg {
+  background: var(--alt-bg-color);
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary-color);
+}
+
+.section-desc {
+  text-align: center;
+  max-width: 700px;
+  margin: 0.5rem auto 3rem auto;
+  color: #666;
+}
+
+/* SECCIÓN SERVICIOS */
+/* Contenedor general */
+.cards-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.description-container .heading {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.description-container .subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.7rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.description-container .paragraph {
+  font-family: "Inter", sans-serif;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.bullet-points {
+  margin-bottom: 2rem;
+}
+
+.bullet-item {
+  display: flex;
+  align-items: start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.bullet-icon {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.bullet-item p {
+  font-family: "Inter", sans-serif;
+  color: #333;
+  margin: 0;
+}
+
+/* Botón de planes */
+.description-container .button-primary {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.description-container .button-primary:hover {
+  background: #3066c8;
+}
+
+/* Tarjetas de servicios */
+.services-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  text-align: left;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+}
+
+.service-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  font-family: "Inter", sans-serif;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* GRID DE CARDS (Testimonios, Blog, etc.) */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.testimonial p {
+  font-style: italic;
+  font-family: "Poppins", sans-serif;
+}
+
+.testimonial strong {
+  display: block;
+  margin-top: 2rem;
+  color: #888;
+}
+
+/* PLANES */
+.pricing-section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.section-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #4285f4;
+}
+
+.section-desc {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #858a93;
+  margin-bottom: 2rem;
+}
+
+.tab-options {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 4rem;
+  margin-top: 3rem;
+}
+
+.tab-btn {
+  font-family: "Outfit", sans-serif;
+  background: none;
+  border: 2px solid #4285f4;
+  padding: 0.5rem 1rem;
+  color: #4285f4;
+  cursor: pointer;
+  border-radius: 10px;
+  font-size: 1.1rem;
+}
+
+.tab-btn.active {
+  background: #4285f4;
+  color: #fff;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px; /* Limita el ancho máximo del contenedor */
+  margin: 0 auto;    /* Centra el contenedor */
+}
+
+.card p {
+  margin-bottom: 1rem; /* Espacio entre la descripción y el enlace */
+}
+
+.card a {
+  display: inline-block; /* Asegura que el enlace tenga su propio espacio */
+  margin-top: 0.5rem;    /* Espacio adicional si es necesario */
+  color: #4285f4;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.card a:hover {
+  color: #3066c8;
+}
+
+/* PLANES - Tarjetas */
+.price-card {
+  max-width: 100%;
+  margin: 0 auto;
+  background: #fff;
+  border: 2px solid #eee;
+  border-radius: 30px;
+  padding: 2rem;
+  text-align: left;
+  box-shadow: 0 20px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.price-card.featured {
+  border-color: #4285f4;
+  transform: scale(1.05);
+}
+
+.price-card h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+  text-align: left;
+}
+
+.price-card h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #4285f4;
+  text-align: left;
+}
+
+.price-card .price span {
+  font-size: 1rem;
+  color: #666;
+}
+
+.price-card .pricing-text {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.pricing-features li {
+  font-family: "Inter", sans-serif;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #333;
+}
+
+.pricing-features li::before {
+  content: "✔";
+  font-family: Arial, sans-serif;
+  font-size: 1.2rem;
+  color: #4285f4;
+}
+
+.button-primary {
+  background: #4285f4;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: "Outfit", sans-serif;
+  font-weight: bold;
+  display: inline-block;
+  transition: background 0.3s ease;
+}
+
+.button-primary:hover {
+  background: #3066c8;
+}
+
+.button-primary.featured {
+  background: #3066c8;
+}
+
+/* BLOG */
+.blog-img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+/* FOOTER */
+.footer {
+  background: #f2f2f2;
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+}
+
+.footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* CONTENEDOR PRINCIPAL CHATBOTS */
+.chatbots-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Mini subtítulo */
+.mini-subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+/* Título y descripción de la sección */
+.chatbot-header {
+  text-align: left;
+  margin-bottom: 2rem;
+}
+
+.section-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #4285f4;
+}
+
+.section-desc {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #666;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Contenido de los chatbots */
+.chatbot-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Imagen del chatbot */
+.chatbot-image img {
+  max-width: 100%;
+  max-height: 800px;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Opciones de chatbots */
+.chatbot-options {
+  max-width: 500px;
+}
+
+.chatbot-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.chatbot-tab {
+  background: #fff;
+  border: 2px solid #eee;
+  padding: 1.5rem;
+  border-radius: 10px;
+  transition: background 0.3s, border-color 0.3s;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chatbot-tab .tab-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.3rem;
+  color: #333;
+}
+
+.chatbot-tab .tab-desc {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #666;
+}
+
+.chatbot-tab.active {
+  border-color: var(--primary-color);
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.chatbot-tab.active .tab-title {
+  color: #fff;
+}
+
+.chatbot-tab.active .tab-desc {
+  color: #e4e4e4;
+}
+
+.chatbot-tab:hover {
+  border-color: var(--primary-color);
+}
+
+/* Mini subtítulo personalizado */
+.mini-subtitle-custom {
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #4285f4;
+  text-align: start;
+  font-weight: 800;
+}
+
+/* Título personalizado */
+.section-title-custom {
+  font-family: "Poppins", sans-serif;
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+/* Descripción de la sección personalizada */
+.section-desc-custom {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+  text-align: right; /* Ajustado a la derecha */
+  max-width: 600px;
+}
+
+/* NUEVO: Ajuste de imágenes a contenedor */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* --- Media Query principal para pantallas <= 768px --- */
+@media (max-width: 768px) {
+  /* Mostrar menú hamburguesa y ocultar/ajustar navbar */
+  .menu-icon {
+    display: flex; /* Se muestra en pantallas pequeñas */
   }
-  
-  .footer a {
-    color: var(--primary-color);
-    text-decoration: none;
-    margin: 0 0.5rem;
-  }
-  
-  .footer a:hover {
-    text-decoration: underline;
-  }
-  
-  /* CONTENEDOR PRINCIPAL CHATBOTS */
-  .chatbots-container {
-    display: flex;
-    align-items: center;
+
+  .navbar {
+    position: absolute;
+    top: 60px;
+    right: 0;
     flex-direction: column;
-    gap: 2rem;
+    background: #fff;
+    gap: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-height: 0; /* Cerrado por defecto */
+    opacity: 0;   /* Cerrado por defecto */
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    z-index: 9999;
   }
-  
-  /* Mini subtítulo */
-  .mini-subtitle {
-    font-family: "Inter", sans-serif;
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 0.5rem;
-    text-align: left;
+
+  /* Opcional: ocultar el botón "Contacto" para que no se monte encima */
+  /* .contact-btn {
+      display: none;
+  } */
+
+  /* HERO: Ajusta alturas y tamaños de texto */
+  .hero {
+    min-height: auto; /* ya no forzamos el 100vh en móvil */
+    background-position: center;
+    background-size: cover;
+    padding: 4rem 1rem; /* espaciado interno */
   }
-  
-  /* Título y descripción de la sección */
-  .chatbot-header {
-    text-align: left;
-    margin-bottom: 2rem;
-  }
-  
-  .section-title {
-    font-family: "Poppins", sans-serif;
-    font-weight: bold;
-    font-size: 2rem;
+
+  .hero-content h1 {
+    font-size: 1.8rem;
     margin-bottom: 1rem;
-    color: #4285f4;
   }
-  
-  .section-desc {
-    font-family: "Inter", sans-serif;
+
+  .hero-content p {
     font-size: 1rem;
-    color: #666;
-    max-width: 600px;
-    line-height: 1.6;
+    margin-bottom: 1.5rem;
   }
-  
-  /* Contenido de los chatbots */
-  .chatbot-content {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 2rem;
+
+  .hero-content button {
+    font-size: 1rem;
+    padding: 0.8rem 1.2rem;
   }
-  
-  /* Imagen del chatbot */
-  .chatbot-image img {
-    max-width: 100%;
-    max-height: 800px;
-    width: auto;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Opciones de chatbots */
-  .chatbot-options {
-    max-width: 500px;
-  }
-  
-  .chatbot-tabs {
-    display: flex;
-    flex-direction: column;
+
+  /* Servicios: pasa de 2 columnas a 1 columna */
+  .cards-grid-container {
+    grid-template-columns: 1fr; /* una sola columna en móvil */
     gap: 1rem;
   }
-  
-  .chatbot-tab {
-    background: #fff;
-    border: 2px solid #eee;
-    padding: 1.5rem;
-    border-radius: 10px;
-    transition: background 0.3s, border-color 0.3s;
-    cursor: pointer;
-    text-align: left;
-    display: flex;
+
+  .services-cards {
+    grid-template-columns: 1fr; /* igualmente, una columna */
+  }
+
+  /* Testimonios / Blog: 1 columna */
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Planes: Ajusta a 1 columna */
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Chatbots: stack en columna */
+  .chatbot-content {
     flex-direction: column;
-    gap: 0.5rem;
+    align-items: center;
   }
-  
-  .chatbot-tab .tab-title {
-    font-family: "Poppins", sans-serif;
-    font-weight: bold;
-    font-size: 1.2rem;
-    margin-bottom: 0.3rem;
-    color: #333;
+
+  .chatbot-image img {
+    max-width: 80%;
+    margin-bottom: 2rem;
   }
-  
-  .chatbot-tab .tab-desc {
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;
-    color: #666;
+
+  .chatbot-options {
+    max-width: 100%;
   }
-  
-  .chatbot-tab.active {
-    border-color: var(--primary-color);
-    background: var(--primary-color);
-    color: #fff;
-  }
-  
-  .chatbot-tab.active .tab-title {
-    color: #fff;
-  }
-  
-  .chatbot-tab.active .tab-desc {
-    color: #e4e4e4;
-  }
-  
-  .chatbot-tab:hover {
-    border-color: var(--primary-color);
-  }
-  
-  /* Mini subtítulo personalizado */
-  .mini-subtitle-custom {
-    font-family: "Poppins", sans-serif;
-    font-size: 1rem;
-    color: #4285f4;
-    text-align: start;
-    font-weight: 800;
-  }
-  
-  /* Título personalizado */
-  .section-title-custom {
-    font-family: "Poppins", sans-serif;
-    font-weight: bold;
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 1.5rem;
-    text-align: left;
-  }
-  
-  /* Descripción de la sección personalizada */
+
   .section-desc-custom {
-    font-family: "Inter", sans-serif;
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.5;
-    text-align: right; /* Ajustado a la derecha */
-    max-width: 600px;
+    text-align: center; 
   }
-  
-  /* Ajustes responsivos */
-  @media (max-width: 1200px) {
-    .chatbot-content {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .chatbot-options {
-      max-width: 100%;
-    }
-  
-    .chatbot-image img {
-      max-height: 600px;
-    }
-  
-    .section-title {
-      font-size: 1.8rem;
-    }
-  
-    .section-desc {
-      font-size: 0.9rem;
-      text-align: center;
-    }
+}
+
+/* NUEVO: Media Query para pantallas muy pequeñas (<= 480px) */
+@media (max-width: 480px) {
+  /* Reduce el padding de secciones */
+  .section {
+    padding: 2rem 1rem;
   }
-  
+
+  /* Ajusta un poco más la tipografía */
+  .hero-content h1 {
+    font-size: 1.6rem;
+  }
+  .hero-content p {
+    font-size: 0.95rem;
+  }
+
+  /* Ajustes finos en planes/testimonios si lo ves necesario */
+}
