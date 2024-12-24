@@ -1,0 +1,271 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+/* TIPOGRAFÍA */
+body {
+    font-family: "Inter", sans-serif;
+    background: #f9f9f9;
+    color: #333;
+}
+  
+h1, h2 {
+    font-family: "Poppins", sans-serif; /* Títulos */
+    font-weight: 700;
+}
+  
+.nav a {
+    font-family: "Outfit", sans-serif; /* Enlaces de navegación */
+}
+  
+.sub-header{
+    display: flex;
+    align-items: center;
+}
+/* ENCABEZADO */
+.header {
+    background: #fff;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #ececec;
+    display: flex;
+    justify-content: space-between; /* Distribuye logo y resto del contenido */
+    align-items: center;
+}
+  
+.logo {
+    flex: 0 0 auto; /* El logo ocupa solo el espacio necesario */
+}
+  
+/* Botón "Regresar al Menú" (o "Contacto") */
+.contact-btn {
+    background-color: #333;
+    color: #fff !important;
+    border-radius: 4px;
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-right: 1rem;
+}
+.contact-btn:hover {
+    background-color: #555;
+}
+
+/* NAVEGACIÓN PRINCIPAL */
+.navbar {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Enlaces dentro de la navbar */
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
+    position: relative;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+.navbar a:hover {
+    color: #4285f4;
+}
+.navbar a:hover::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #4285f4;
+    animation: slideIn 0.3s forwards;
+}
+
+@keyframes slideIn {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+}
+  
+/* Ícono hamburguesa */
+.hamburger {
+    display: none; /* Oculto por defecto en pantallas grandes */
+    cursor: pointer;
+}
+  
+/* Líneas del ícono (3 barras) */
+.hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 4px 0;
+    background: #333;
+    transition: all 0.3s;
+}
+
+/* Animación al activar el ícono: convertir en "X" */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Cuando togglemos la clase .show a la nav en móvil */
+.navbar.show {
+    flex-direction: column;
+    background: #fff;
+    position: absolute;
+    right: 2rem;
+    top: 70px; /* Ajusta según la altura del header */
+    padding: 1rem;
+    border: 1px solid #ececec;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    /* Si quieres un pequeño efecto de aparición */
+    max-height: 300px;
+    opacity: 1;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+/* Breakpoint para móvil */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block; /* Muestra el menú hamburguesa en pantallas pequeñas */
+      }
+
+    /* En móvil, la navbar normal se oculta por defecto */
+    .navbar {
+      display: none; 
+    }
+
+    /* Al hacer toggle, con .show, la mostramos */
+    .navbar.show {
+      display: flex;
+    }
+
+    /* Ajustamos contenedor a una sola columna */
+    .container {
+      flex-direction: column;
+      margin: 1rem;
+    }
+
+    /* SIDEBAR en móviles: oculta por defecto */
+    .sidebar {
+      display: none;
+    }
+    .sidebar.show {
+      display: block; 
+      position: absolute;
+      left: 1rem;
+      right: 1rem;
+      top: 140px; /* Ajusta la posición según tu preferencia */
+      z-index: 9999;
+    }
+}
+  
+/* CONTENEDOR PRINCIPAL */
+.container {
+    display: flex;
+    margin: 1rem 2rem;
+    gap: 1rem;
+}
+  
+/* SIDEBAR */
+.sidebar, .sidebar * {
+    font-family: "Inter", sans-serif;
+}
+  
+.sidebar {
+    flex: 0 0 250px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+  
+.sidebar h2 {
+    color: #4285f4;
+    margin-bottom: 1rem;
+    font-family: "Poppins", sans-serif;
+}
+  
+.sidebar ul {
+    list-style: none;
+}
+.sidebar ul li {
+    margin-bottom: 0.9rem;
+}
+.sidebar ul li a {
+    color: #333;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+.sidebar ul li a:hover {
+    color: #4285f4;
+}
+  
+/* CONTENIDO PRINCIPAL */
+.main-content {
+    flex: 1;
+    background: #fff;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+  
+.hero {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.hero h1 {
+    font-size: 2rem;
+    color: #4285f4;
+    margin-bottom: 0.5rem;
+}
+.hero p {
+    color: #666;
+}
+  
+/* SUB-SECCIONES */
+.main-content section {
+    margin-bottom: 2rem;
+}
+.main-content h2 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+    color: #4285f4;
+    font-size: 1.2rem;
+}
+.main-content p,
+.main-content ul,
+.main-content li {
+    line-height: 1.7;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+}
+.main-content ul {
+    list-style: disc;
+    margin-left: 1.5rem;
+}
+  
+/* FOOTER */
+.footer {
+    background: #fff;
+    border-top: 1px solid #ececec;
+    text-align: center;
+    padding: 1.5rem 2rem;
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #666;
+}

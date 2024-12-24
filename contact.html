@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta
+    name="description"
+    content="Contacta a FlowSiteAI para agendar una demo personalizada y llevar tu negocio al siguiente nivel."
+  />
+  <title>FlowSiteAI - Contacto</title>
+
+  <!-- Fuentes Google -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&family=Poppins:wght@400;700&family=Inter:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 13px 32px;
+      background-color: #f5f5f5;
+    }
+
+    header .logo img {
+      max-width: 120px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+    }
+
+    nav a {
+      font-family: 'Outfit', sans-serif; /* Enlaces de navegación */
+      text-decoration: none;
+      color: #333;
+      padding: 10px 15px;
+      transition: color 0.3s ease, border-bottom 0.3s ease;
+      position: relative;
+    }
+
+    nav a:hover {
+      color: #4285f4;
+    }
+
+    nav a:hover::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #4285f4;
+      animation: slideIn 0.3s forwards;
+    }
+
+    nav a.active {
+      color: #4285f4;
+    }
+
+    @keyframes slideIn {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    .contact-section {
+      display: flex;
+      padding: 50px;
+      gap: 30px;
+    }
+
+    .left-panel {
+      width: 30%;
+      padding: 30px;
+      background-color: #4285f4;
+      color: white;
+      border-radius: 20px;
+    }
+
+    .left-panel h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 200;
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    .left-panel p {
+      margin: 10px 0;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .right-panel {
+      flex: 1;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+    }
+
+    .right-panel h2 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 22px;
+      margin-bottom: 15px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .contact-form label {
+      margin-top: 15px;
+      font-weight: bold;
+      font-family: 'Outfit', sans-serif;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      margin-top: 5px;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .contact-form button {
+      margin-top: 20px;
+      background-color: #4285f4;
+      color: #fff;
+      border: none;
+      border-radius: 10px;
+      padding: 12px 20px;
+      font-size: 16px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .contact-form button:hover {
+      background-color: #357ae8;
+      transform: scale(1.05);
+    }
+    .sub-header{
+      display: flex;
+    }
+
+    .acepto {
+      display: flex;
+      align-items: center;
+      gap: 8px; /* Espaciado entre el checkbox y el texto */
+      margin-top: 15px;
+    }
+
+    .acepto input[type="checkbox"] {
+      margin: 0; /* Eliminar márgenes del checkbox */
+    }
+
+    .acepto label {
+      font-family: 'Inter', sans-serif;
+      margin-bottom: 0.8rem;
+      font-size: 16px;
+      line-height: 1; /* Asegura un espaciado consistente */
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .contact-section {
+        flex-direction: column;
+      }
+
+      .left-panel {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .right-panel {
+        width: 100%;
+      }
+    }
+      /* FOOTER */
+      .footer {
+    background-color: #f8f9fa;
+    padding: 2rem 1rem;
+    color: var(--text-color);
+    font-family: "Inter", sans-serif;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+      text-align: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .footer-content {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .footer-logo {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .footer-links h4 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: #3066c8;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/bot.png" alt="FlowSiteAI" />
+      </a>
+    </div>
+    
+    <div class = "sub-header">
+      <nav>
+        <a href="index.html">Inicio</a>
+      </nav>
+    </div>
+
+  </header>
+
+  <section class="contact-section">
+    <div class="left-panel">
+      <h2>Transforma tu negocio con un sitio web profesional y herramientas inteligentes</h2>
+      <p>
+        En FlowSiteAI creamos <strong>sitios web personalizados</strong> con <strong>chatbots avanzados</strong> para destacar tu negocio y aumentar tus ventas.
+      </p>
+      <p>
+        Contáctanos hoy mismo y comienza a posicionar tu empresa como líder en su sector. ¡Estamos listos para conocer tu proyecto y ofrecerte una solución a la medida!
+      </p>
+      <p><strong>Email:</strong> <a href="mailto:flowsiteai@gmail.com" style="color: var(--primary-color); text-decoration: none;">hola@flowsiteai.com</a></p>
+      <p><strong>WhatsApp:</strong> <a href="https://wa.me/526645290620" target="_blank" style="color: var(--primary-color); text-decoration: none;">+52 664 529 0620</a></p>
+    </div>
+    
+    <div class="right-panel">
+      <h2>Solicita tu sitio web profesional con FlowSiteAI</h2>
+      <p>
+        Completa el formulario y recibe una propuesta personalizada. En FlowSiteAI creamos <strong>sitios web únicos</strong> con <strong>chatbots avanzados</strong> para impulsar tu negocio.
+      </p>
+    
+      <!-- Formulario con ID para gestionarlo con JS -->
+      <form class="contact-form" id="contact-form">
+        <label for="nombre">Tu Nombre Completo</label>
+        <input type="text" id="nombre" placeholder="Ejemplo: Juan Pérez" required />
+    
+        <label for="correo">Correo Electrónico</label>
+        <input type="email" id="correo" placeholder="ejemplo@tudominio.com" required />
+    
+        <label for="telefono">Número de Teléfono</label>
+        <input type="tel" id="telefono" placeholder="Ejemplo: +52 123 456 7890" />
+    
+        <label for="descripcion">¿Qué tipo de sitio web necesitas?</label>
+        <textarea id="descripcion" rows="4" placeholder="Describe tus necesidades: tipo de negocio, funcionalidades requeridas, etc."></textarea>
+    
+        <label for="fecha">¿Cuándo te gustaría empezar?</label>
+        <input type="date" id="fecha" />
+    
+        <div class="acepto">
+          <input type="checkbox" id="aviso" required />
+          <label for="aviso">
+            Acepto el <a href="legal.html#privacidad" style="color: #4285f4; text-decoration: none;">Aviso de Privacidad</a>
+          </label>
+        </div>
+    
+        <button type="submit">Solicitar Propuesta</button>
+      </form>
+    </div>
+    
+  </section>
+
+  <!-- Script de Supabase -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+  <script>
+    // Función opcional para mostrar alertas
+    function showAlert(message, type = "success") {
+      // En este ejemplo, usamos alert nativo:
+      if (type === "error") {
+        alert("ERROR: " + message);
+      } else {
+        alert(message);
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      const SUPABASE_URL = "https://ykzuqnwffqnrceitfqei.supabase.co";
+      const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlrenVxbndmZnFucmNlaXRmcWVpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzUwMDcyMzcsImV4cCI6MjA1MDU4MzIzN30.M9S0a_WSdAAcN079JPlDusNE56tdNLB6_9VySy9yBZ0"; // <-- Reemplaza con tu Supabase key
+      const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+      // Referencia al formulario
+      const form = document.getElementById("contact-form");
+
+      // Manejador de submit
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        // Tomamos los valores del formulario
+        const nombre = document.getElementById("nombre").value.trim();
+        const email = document.getElementById("correo").value.trim();
+        const telefono = document.getElementById("telefono").value.trim();
+        const descripcion = document.getElementById("descripcion").value.trim();
+        const fecha = document.getElementById("fecha").value;
+
+        // Validaciones simples
+        if (!nombre || !email) {
+          showAlert("Por favor, completa todos los campos requeridos.", "error");
+          return;
+        }
+
+        try {
+          // Insertamos en la tabla flowsiteai-contacto (ajusta nombres según tus columnas)
+          const { data, error } = await supabase
+            .from("flowsiteai-contacto")
+            .insert([
+              {
+                "nombre": nombre,
+                "email": email,
+                "telefono": telefono,
+                "descripcion-sitio-web": descripcion,
+                "cita": fecha || null
+              }
+            ]);
+
+          if (error) {
+            throw error;
+          }
+
+          showAlert("¡Mensaje enviado exitosamente!");
+          form.reset();
+        } catch (err) {
+          console.error("Error al enviar el mensaje:", err.message);
+          showAlert("Hubo un error al enviar el mensaje. Inténtalo de nuevo.", "error");
+        }
+      });
+    });
+  </script>
+   <!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <p class="footer-logo">© 2024 <strong>FlowSiteAI</strong>. Todos los derechos reservados.</p>
+      <div class="footer-links">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:flowsiteai@gmail.com">flowsiteai@gmail.com</a></li>
+          <li><a href="tel:+526645290620">+52 664 529 0620</a></li>
+          <li><a href="https://wa.me/526645290620" target="_blank">WhatsApp</a></li>
+          <li><a href="https://www.instagram.com/flowsiteai/" target="_blank">Instagram</a></li>
+          <li><a href="legal.html">Avisos Legales</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+  
+</body>
+</html>

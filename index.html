@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!DOCTYPE html>
+  <html lang="es">
+  <head>
+    <!-- Configuración básica -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    
+    <!-- Título con palabra clave principal -->
+    <title>FlowSiteAI - Desarrollo de Páginas Web y Chatbots Avanzados</title>
+    
+    <!-- Meta descripción optimizada para SEO -->
+    <meta name="description" content="FlowSiteAI desarrolla páginas web personalizadas y chatbots avanzados que optimizan tu negocio. Automatiza procesos, mejora ventas y posiciona tu marca online con tecnología de vanguardia." />
+    
+    <!-- Palabras clave (opcional en SEO moderno, pero útil en algunos casos) -->
+    <meta name="keywords" content="desarrollo de páginas web, chatbots avanzados, automatización de procesos, SEO avanzado, FlowSiteAI" />
+    
+    <!-- Autor -->
+    <meta name="author" content="FlowSiteAI" />
+  
+    <!-- Meta para redes sociales: Open Graph -->
+    <meta property="og:title" content="FlowSiteAI - Desarrollo de Páginas Web y Chatbots Avanzados" />
+    <meta property="og:description" content="Descubre cómo FlowSiteAI puede transformar tu negocio con tecnología web personalizada y chatbots con inteligencia artificial." />
+    <meta property="og:image" content="https://flowsiteai.com/images/preview.jpg" />
+    <meta property="og:url" content="https://flowsiteai.com" />
+    <meta property="og:type" content="website" />
+  
+    <!-- Meta para Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="FlowSiteAI - Desarrollo de Páginas Web y Chatbots Avanzados" />
+    <meta name="twitter:description" content="FlowSiteAI combina tecnología avanzada para crear páginas web y chatbots que optimizan tu negocio y aumentan tus resultados." />
+    <meta name="twitter:image" content="https://flowsiteai.com/images/preview.jpg" />
+  
+    <!-- Icono del sitio -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+    
+    <!-- Fuentes Google -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&family=Poppins:wght@400;700&family=Inter:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+  
+    <!-- CSS Principal -->
+    <link rel="stylesheet" href="style-index.css" />
+  
+    <!-- Preconexiones para optimización de carga -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    
+    <!-- Canonical para evitar contenido duplicado -->
+    <link rel="canonical" href="https://flowsiteai.com" />
+
+    <link rel="icon" href="images/bot.png" type="image/x-icon" />
+
+  
+    <!-- Smooth Scroll -->
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  
+    <!-- Datos estructurados JSON-LD para SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "FlowSiteAI",
+        "url": "https://flowsiteai.com",
+        "description": "Desarrollo de páginas web personalizadas y chatbots avanzados con inteligencia artificial.",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://flowsiteai.com/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    </script>
+  </head>
+  
+
+<body>
+  <!-- Script para Chatbot (Flowise) -->
+  <script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.init({
+        chatflowid: "8157dc60-05fe-4661-ae62-d1580b074f47",
+        apiHost: "https://143.198.129.227",
+        chatflowConfig: {
+            /* Configuración del flujo del chatbot */
+        },
+        observersConfig: {
+            /* Configuración de observadores */
+        },
+        theme: {
+            button: {
+                backgroundColor: '#3B81F6',
+                right: 20,
+                bottom: 20,
+                size: 60,
+                dragAndDrop: true,
+                iconColor: 'white',
+                customIconSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
+                autoWindowOpen: {
+                    autoOpen: true,
+                    openDelay: 2,
+                    autoOpenOnMobile: false
+                }
+            },
+            tooltip: {
+                showTooltip: true,
+                tooltipMessage: '¡Hola! 👋',
+                tooltipBackgroundColor: '#4285f4',
+                tooltipTextColor: 'white',
+                tooltipFontSize: 18
+            },
+            customCSS: ``,
+            chatWindow: {
+                showTitle: true,
+                showAgentMessages: true,
+                title: 'FlowSiteAI Bot',
+                titleAvatarSrc: 'https://raw.githubusercontent.com/walkxcode/dashboard-icons/main/svg/google-messages.svg',
+                welcomeMessage: '¡Hola! Soy el FlowSiteAI Bot. ¿En qué puedo ayudarte hoy? 😊',
+                errorMessage: 'Ups, algo salió mal. Intenta nuevamente.',
+                backgroundColor: '#ffffff',
+                backgroundImage: 'ingresa ruta o enlace de la imagen',
+                height: 700,
+                width: 400,
+                fontSize: 16,
+                starterPrompts: [
+                    "¿Cómo puede un chatbot ayudar a mi negocio?",
+                    "¿Qué incluye el servicio de desarrollo web?"
+                ],
+                starterPromptFontSize: 15,
+                clearChatOnReload: false,
+                sourceDocsTitle: 'Fuentes:',
+                renderHTML: true,
+                botMessage: {
+                    backgroundColor: '#f7f8ff',
+                    textColor: '#303235',
+                    showAvatar: true,
+                    avatarSrc: 'images/bot.png'
+                },
+                userMessage: {
+                    backgroundColor: '#3B81F6',
+                    textColor: '#ffffff',
+                    showAvatar: true,
+                    avatarSrc: 'images/user.png'
+                },
+                textInput: {
+                    placeholder: 'Escribe tu pregunta aquí',
+                    backgroundColor: '#ffffff',
+                    textColor: '#303235',
+                    sendButtonColor: '#3B81F6',
+                    maxChars: 50,
+                    maxCharsWarningMessage: 'Has excedido el límite de caracteres. Por favor, escribe menos de 50 caracteres.',
+                    autoFocus: true,
+                    sendMessageSound: true,
+                    sendSoundLocation: 'send_message.mp3',
+                    receiveMessageSound: true,
+                    receiveSoundLocation: 'receive_message.mp3'
+                },
+                feedback: {
+                    color: '#303235'
+                },
+                dateTimeToggle: {
+                    date: true,
+                    time: true
+                },
+                footer: {
+                    textColor: '#303235',
+                    text: 'Desarrollado por',
+                    company: 'FlowSiteAI',
+                    companyLink: 'https://flowsiteai.com'
+                }
+            }
+        }
+    })
+</script>
+
+
+  <!-- ENCABEZADO -->
+  <header class="header">
+    <!-- Logo -->
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/bot.png" alt="FlowSiteAI" />
+      </a>
+    </div>
+
+    <!-- Botón Contacto -->
+    <a href="contact.html" class="contact-btn">Contacto</a>
+
+    <!-- Ícono Menú (móvil) -->
+    <div class="menu-icon" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <!-- Navegación -->
+    <nav class="navbar" id="navbar">
+      <a href="#inicio" class="active">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#testimonios">Testimonios</a>
+      <a href="#chatbots">Chatbots</a>
+      <a href="#planes">Planes</a>
+      <a href="#blog">Blog</a>
+    </nav>
+  </header>
+
+  <!-- SECCIÓN HERO (Inicio) -->
+  <section class="hero" id="inicio">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Potencia tu negocio con diseño web y chatbots avanzados</h1>
+      <p>
+        Creamos páginas web modernas y herramientas inteligentes para destacar en internet.
+      </p>
+      <button onclick="location.href='#planes'">Explora nuestros planes</button>
+    </div>
+  </section>
+  
+  
+
+  <!-- SECCIÓN SERVICIOS -->
+  <section id="servicios" class="section">
+    <div class="cards-grid-container">
+      <div class="description-container">
+        <h3 class="heading">SERVICIOS</h3>
+        <h4 class="subtitle">
+          Impulsa tu negocio con tecnología avanzada y diseño profesional
+        </h4>
+        <p class="paragraph">
+          FlowSiteAI ofrece soluciones integrales en <strong>diseño web</strong> y <strong>chatbots avanzados</strong>. Nos especializamos en crear páginas web modernas, optimizadas para buscadores, y herramientas automatizadas como chatbots con inteligencia artificial que se adaptan a las necesidades de tu negocio. Garantizamos resultados que transforman tu presencia en línea.
+        </p>
+        <div class="bullet-points">
+          <div class="bullet-item">
+            <span class="bullet-icon">✔</span>
+            <p>Sitios web diseñados para posicionar tu marca y captar clientes.</p>
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-icon">✔</span>
+            <p>Chatbots inteligentes que automatizan ventas y soporte técnico.</p>
+          </div>
+          <div class="bullet-item">
+            <span class="bullet-icon">✔</span>
+            <p>Mantenimiento y soporte continuo para que no te preocupes de nada.</p>
+          </div>
+        </div>
+        <a href="#planes" class="button-primary">Ver planes</a>
+      </div>
+      <div class="services-cards">
+        <div class="service-card">
+          <h3 class="service-title">Diseño y Desarrollo Web</h3>
+          <p class="service-description">
+            Creamos <strong>páginas web personalizadas</strong>, optimizadas para SEO y adaptadas a tu marca. Diseños modernos que destacan en cualquier dispositivo y garantizan una experiencia de usuario excepcional.
+          </p>
+        </div>
+        <div class="service-card">
+          <h3 class="service-title">Chatbots Inteligentes</h3>
+          <p class="service-description">
+            Nuestros <strong>chatbots avanzados</strong> utilizan inteligencia artificial para automatizar procesos clave, como ventas, soporte técnico y agendado de citas. ¡Haz que tu negocio trabaje 24/7!
+          </p>
+        </div>
+        <div class="service-card">
+          <h3 class="service-title">Mantenimiento y Soporte</h3>
+          <p class="service-description">
+            Ofrecemos <strong>soporte técnico continuo</strong> y servicios de mantenimiento. Nos encargamos de actualizaciones, cambios y resolución de problemas para que tú te enfoques en crecer tu negocio.
+          </p>
+        </div>
+        <div class="service-card">
+          <h3 class="service-title">Automatización de Correos</h3>
+          <p class="service-description">
+            Configuramos sistemas de <strong>correos automatizados</strong> para dar seguimiento a tus clientes, verificar cuentas y enviar promociones. Una herramienta eficaz para fidelizar y captar clientes.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+
+<!-- SECCIÓN TESTIMONIOS -->
+<section class="section alt-bg" id="testimonios">
+  <h2 class="section-title">Testimonios</h2>
+  <p class="section-desc">
+    Con FlowSiteAI, nuestros clientes transforman su presencia digital. Esto es lo que tienen que decir:
+  </p>
+  <div class="cards-grid">
+    <article class="card testimonial">
+      <p>
+        "Gracias a FlowSiteAI, nuestro chatbot ahora responde preguntas frecuentes, agenda citas y hasta realiza ventas automáticas. ¡Hemos mejorado la experiencia de nuestros clientes y aumentado nuestras conversiones un 40%!"
+      </p>
+      <strong>- Andrea López, Gerente de Marketing</strong>
+    </article>
+    <article class="card testimonial">
+      <p>
+        "Rediseñamos nuestro sitio web con FlowSiteAI, y en menos de 3 meses, nuestras visitas orgánicas se triplicaron. Además, su enfoque en SEO nos posicionó entre los primeros resultados de búsqueda."
+      </p>
+      <strong>- Javier Ruiz, Propietario de Negocio</strong>
+    </article>
+    <article class="card testimonial">
+      <p>
+        "La automatización de correos electrónicos y la integración del chatbot nos ahorraron más de 10 horas semanales de trabajo manual. Ahora podemos enfocarnos en hacer crecer nuestro negocio mientras FlowSiteAI hace el resto."
+      </p>
+      <strong>- Sandra Torres, CEO</strong>
+    </article>
+  </div>
+</section>
+
+
+  <!-- SECCION DE CHATBOTS -->
+  <section id="chatbots" class="section">
+    <div class="container chatbots-container">
+      <div class="chatbot-header custom-header">
+        <p class="mini-subtitle-custom">Nuestros Servicios</p>
+        <h2 class="section-title-custom">Tipos de Chatbots</h2>
+        <p class="section-desc-custom">
+          Descubre nuestros chatbots diseñados para adaptarse a las necesidades
+          específicas de tu negocio.
+        </p>
+      </div>
+      <div class="chatbot-content">
+        <div class="chatbot-image">
+          <img id="chatbot-image" src="images/sales.png" alt="Chatbot de Ventas" />
+        </div>
+        <div class="chatbot-options">
+          <div class="chatbot-tabs">
+            <button
+              class="chatbot-tab active"
+              data-image="images/sales.png"
+              data-color="#FF7A00"
+            >
+              <div class="tab-title">Chatbot de Ventas</div>
+              <div class="tab-desc">
+                Automatiza y aumenta tus ventas con conversaciones inteligentes.
+              </div>
+            </button>
+            <button
+              class="chatbot-tab"
+              data-image="images/support.png"
+              data-color="#0052CC"
+            >
+              <div class="tab-title">Chatbot de Soporte Técnico</div>
+              <div class="tab-desc">
+                Resuelve problemas técnicos y mejora la experiencia del cliente.
+              </div>
+            </button>
+            <button
+              class="chatbot-tab"
+              data-image="images/medic.png"
+              data-color="#008080"
+            >
+              <div class="tab-title">Chatbot de Agenda/Citas</div>
+              <div class="tab-desc">
+                Gestiona reservas y citas de forma rápida y eficiente.
+              </div>
+            </button>
+            <button
+              class="chatbot-tab"
+              data-image="images/custom.png"
+              data-color="#6A1B9A"
+            >
+              <div class="tab-title">Chatbot Personalizado</div>
+              <div class="tab-desc">
+                Adaptamos un chatbot a las necesidades específicas de tu negocio.
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Manejo de tabs de Chatbots
+    const tabs = document.querySelectorAll(".chatbot-tab");
+    const image = document.getElementById("chatbot-image");
+
+    // Configurar el color inicial basado en el primer tab activo
+    const initialTab = document.querySelector(".chatbot-tab.active");
+    initialTab.style.backgroundColor = initialTab.getAttribute("data-color");
+    initialTab.style.color = "white";
+    initialTab.style.border = `2px solid ${initialTab.getAttribute("data-color")}`;
+
+    let autoSwitch;
+
+    tabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => {
+        // Cambiar imagen
+        const newImage = tab.getAttribute("data-image");
+        const newColor = tab.getAttribute("data-color");
+
+        if (image.src !== newImage) {
+          image.src = newImage;
+        }
+
+        // Cambiar color de fondo y borde del tab seleccionado
+        tabs.forEach((t) => {
+          t.style.backgroundColor = "";
+          t.style.color = "";
+          t.style.border = "1px solid #ccc";
+        });
+        tab.style.backgroundColor = newColor;
+        tab.style.color = "white";
+        tab.style.border = `2px solid ${newColor}`;
+
+        // Activar el tab seleccionado
+        tabs.forEach((t) => t.classList.remove("active"));
+        tab.classList.add("active");
+
+        // Reiniciar el carrusel automático
+        clearInterval(autoSwitch);
+        startAutoSwitch(index);
+      });
+    });
+
+    // Cambio automático entre tabs cada 5 segundos
+    function startAutoSwitch(initialIndex = 0) {
+      let currentIndex = initialIndex;
+
+      autoSwitch = setInterval(() => {
+        tabs[currentIndex].classList.remove("active");
+        tabs[currentIndex].style.backgroundColor = "";
+        tabs[currentIndex].style.color = "";
+        tabs[currentIndex].style.border = "1px solid #ccc";
+        currentIndex = (currentIndex + 1) % tabs.length;
+        tabs[currentIndex].classList.add("active");
+        tabs[currentIndex].style.backgroundColor =
+          tabs[currentIndex].getAttribute("data-color");
+        tabs[currentIndex].style.color = "white";
+        tabs[currentIndex].style.border = `2px solid ${tabs[currentIndex].getAttribute("data-color")}`;
+
+        const newImage = tabs[currentIndex].getAttribute("data-image");
+        image.src = newImage;
+      }, 5000);
+    }
+
+    startAutoSwitch();
+  </script>
+
+  <!-- SECCIÓN PLANES (ejemplo) -->
+  <section class="pricing-section alt-bg" id="planes">
+    <h2 class="section-title">Planes diseñados para cada necesidad</h2>
+    <p class="section-desc">
+      Escoge el plan que mejor se adapte a tu negocio y empieza a transformar tu presencia digital.
+    </p>
+  
+    <div class="tab-options">
+      <button class="tab-btn active" onclick="switchPricing('mensual')">Mensual</button>
+      <button class="tab-btn" onclick="switchPricing('anual')">Anual</button>
+    </div>
+  
+    <div class="pricing-grid">
+      <!-- Plan Básico -->
+      <div class="price-card">
+        <h1 class="price" data-price-mensual="USD $54" data-price-anual="USD $432">
+          USD $54<span>/mes</span>
+        </h1>
+        <h4 class="price-type">Básico</h4>
+        <p class="pricing-text">Ideal para pequeños negocios o proyectos personales que necesitan una presencia básica en internet.</p>
+        <ul class="pricing-features">
+          <li>Hasta 2 páginas (Inicio y Contacto)</li>
+          <li>Hosting incluido (99.9% uptime)</li>
+          <li>Mantenimiento gratuito</li>
+          <li>Chatbot básico ilimitado</li>
+          <li>Dominio personalizable</li>
+          <li>Certificado SSL</li>
+          <li>Funciones SEO básico</li>
+          <li>Soporte técnico 24/7</li>
+        </ul>
+        <a href="contact.html" class="button-primary">¡Lo quiero!</a>
+      </div>
+  
+      <!-- Plan Plus -->
+      <div class="price-card featured">
+        <div class="recommended-tag">Recomendado</div>
+        <h1 class="price" data-price-mensual="USD $79" data-price-anual="USD $732">
+          USD $79<span>/mes</span>
+        </h1>
+        <h4 class="price-type">Plus</h4>
+        <p class="pricing-text">Perfecto para empresas en crecimiento que buscan un sitio más dinámico y funcional.</p>
+        <ul class="pricing-features">
+          <li>Hasta 4 páginas (Inicio, Contacto, Servicios y una adicional)</li>
+          <li>Hosting optimizado</li>
+          <li>Mantenimiento gratuito</li>
+          <li>Chatbot avanzado ilimitado</li>
+          <li>Dominio personalizable</li>
+          <li>Certificado SSL avanzado</li>
+          <li>Funciones SEO avanzado</li>
+          <li>Base de datos (5GB espacio)</li>
+          <li>Correos automatizados (3,000 emails/mes)</li>
+          <li>1 funcionalidad avanzada personalizable (Blog, Mapa interactivo, Tienda básica, etc.)</li>
+          <li>Soporte técnico 24/7</li>
+        </ul>
+        <a href="contact.html" class="button-primary featured">¡Lo quiero!</a>
+      </div>
+  
+      <!-- Plan Premium -->
+      <div class="price-card">
+        <h1 class="price" data-price-mensual="USD $155" data-price-anual="USD $1,644">
+          USD $155<span>/mes</span>
+        </h1>
+        <h4 class="price-type">Premium</h4>
+        <p class="pricing-text">El plan ideal para negocios grandes que necesitan un sitio robusto y completo.</p>
+        <ul class="pricing-features">
+          <li>Hasta 8 páginas (Inicio, Contacto, Servicios, Productos, Blog, etc.)</li>
+          <li>Hosting avanzado con capacidad para alto tráfico</li>
+          <li>Mantenimiento gratuito</li>
+          <li>Chatbot experto ilimitado con inteligencia avanzada</li>
+          <li>Dominio personalizable</li>
+          <li>Certificado SSL premium</li>
+          <li>Funciones SEO avanzado</li>
+          <li>Base de datos (250GB espacio)</li>
+          <li>Correos automatizados (50,000 emails/mes, sin límite diario)</li>
+          <li>2 funcionalidades avanzadas personalizables (Tienda avanzada, Noticias dinámicas, Gestión de usuarios, etc.)</li>
+          <li>Soporte técnico 24/7</li>
+        </ul>
+        <a href="contact.html" class="button-primary">¡Lo quiero!</a>
+      </div>
+    </div>
+  </section>
+  
+  
+  <script>
+    // Cambio de precios Mensual/Anual
+    function switchPricing(plan) {
+      const prices = document.querySelectorAll(".price");
+      const buttons = document.querySelectorAll(".tab-btn");
+
+      prices.forEach((price) => {
+        const monthlyPrice = price.getAttribute("data-price-mensual");
+        const annualPrice = price.getAttribute("data-price-anual");
+        price.innerHTML =
+          plan === "mensual"
+            ? `${monthlyPrice}<span>/mes</span>`
+            : `${annualPrice}<span>/año</span>`;
+      });
+
+      buttons.forEach((btn) => btn.classList.remove("active"));
+      document
+        .querySelector(`[onclick="switchPricing('${plan}')"]`)
+        .classList.add("active");
+    }
+  </script>
+
+  <!-- SECCIÓN BLOG (ejemplo) -->
+  <section class="section" id="blog">
+    <h2 class="section-title">Blog</h2>
+    <p class="section-desc">
+      Descubre las últimas tendencias en IA y redes sociales.
+    </p>
+    <div class="cards-grid">
+      <!-- Artículo 1 -->
+      <article class="card">
+        <img src="images/chatbots.jpg" alt="Chatbots Futuro" class="blog-img" />
+        <h3>El Futuro de los Chatbots</h3>
+        <p>
+          Descubre cómo los chatbots están transformando el servicio al cliente
+          y la interacción digital.
+        </p>
+        <a
+          href="https://www.ibm.com/mx-es/topics/chatbots"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Leer más &raquo;</a
+        >
+      </article>
+
+      <!-- Artículo 2 -->
+      <article class="card">
+        <img src="images/ia.webp" alt="IA y Seguridad" class="blog-img" />
+        <h3>Seguridad en Redes Sociales</h3>
+        <p>
+          Cómo la IA ayuda a protegernos en el mundo digital y en redes sociales.
+        </p>
+        <a
+          href="https://latam.kaspersky.com/resource-center/preemptive-safety/social-media-ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Leer más &raquo;</a
+        >
+      </article>
+
+      <!-- Artículo 3 -->
+      <article class="card">
+        <img src="images/social-media.jpg" alt="IA y Redes Sociales" class="blog-img" />
+        <h3>La Inteligencia Artificial en Redes Sociales</h3>
+        <p>
+          Explora cómo la IA está impulsando las redes sociales hacia el futuro.
+        </p>
+        <a
+          href="https://forbescentroamerica.com/2024/04/25/inteligencia-artificial-la-nueva-estrella-de-las-redes-sociales"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Leer más &raquo;</a
+        >
+      </article>
+    </div>
+  </section>
+
+ <!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-content">
+      <p class="footer-logo">© 2024 <strong>FlowSiteAI</strong>. Todos los derechos reservados.</p>
+      <div class="footer-links">
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:flowsiteai@gmail.com">flowsiteai@gmail.com</a></li>
+          <li><a href="tel:+526645290620">+52 664 529 0620</a></li>
+          <li><a href="https://wa.me/526645290620" target="_blank">WhatsApp</a></li>
+          <li><a href="https://www.instagram.com/flowsiteai/" target="_blank">Instagram</a></li>
+          <li><a href="legal.html">Avisos Legales</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ESTILOS DEL FOOTER -->
+<style>
+  .footer {
+    background-color: #f8f9fa;
+    padding: 2rem 1rem;
+    color: var(--text-color);
+    font-family: "Inter", sans-serif;
+  }
+
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+  }
+
+  .footer-content {
+    flex: 1;
+    min-width: 280px;
+  }
+
+  .footer-logo {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .footer-links h4 {
+    font-family: "Poppins", sans-serif;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer-links li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+
+  .footer-links a:hover {
+    color: #3066c8;
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .footer-container {
+      flex-direction: column;
+      text-align: left;
+    }
+  }
+</style>
+
+
+  <!-- Script para el menú hamburguesa -->
+  <script>
+    function toggleMenu() {
+      const navbar = document.getElementById("navbar");
+      const menuIcon = document.querySelector(".menu-icon");
+
+      navbar.classList.toggle("show"); // Agrega o quita la clase 'show'
+      menuIcon.classList.toggle("active"); // (Opcional) Anima el ícono
+    }
+  </script>
+</body>
+</html>
