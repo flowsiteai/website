@@ -209,10 +209,40 @@
       <a href="#planes">Planes</a>
       <a href="#blog">Blog</a>
     </nav>
+
+    <!-- Smooth Scroll -->
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Animación Fade In */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
   </header>
 
   <!-- SECCIÓN HERO (Inicio) -->
-  <section class="hero" id="inicio">
+  <section class="hero fade-in" id="inicio">
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <h1>Potencia tu negocio con diseño web y chatbots avanzados</h1>
@@ -228,15 +258,15 @@
   <!-- SECCIÓN SERVICIOS -->
   <section id="servicios" class="section">
     <div class="cards-grid-container">
-      <div class="description-container">
-        <h3 class="heading">SERVICIOS</h3>
-        <h4 class="subtitle">
+      <div class="description-container fade-in">
+        <h3 class="heading fade-in">SERVICIOS</h3>
+        <h4 class="subtitle fade-in">
           Impulsa tu negocio con tecnología avanzada y diseño profesional
         </h4>
-        <p class="paragraph">
+        <p class="paragraph fade-in">
           FlowSiteAI ofrece soluciones integrales en <strong>diseño web</strong> y <strong>chatbots avanzados</strong>. Nos especializamos en crear páginas web modernas, optimizadas para buscadores, y herramientas automatizadas como chatbots con inteligencia artificial que se adaptan a las necesidades de tu negocio. Garantizamos resultados que transforman tu presencia en línea.
         </p>
-        <div class="bullet-points">
+        <div class="bullet-points fade-in">
           <div class="bullet-item">
             <span class="bullet-icon">✔</span>
             <p>Sitios web diseñados para posicionar tu marca y captar clientes.</p>
@@ -250,28 +280,28 @@
             <p>Mantenimiento y soporte continuo para que no te preocupes de nada.</p>
           </div>
         </div>
-        <a href="#planes" class="button-primary">Ver planes</a>
+        <a href="#planes" class="button-primary fade-in">Ver planes</a>
       </div>
       <div class="services-cards">
-        <div class="service-card">
+        <div class="service-card fade-in">
           <h3 class="service-title">Diseño y Desarrollo Web</h3>
           <p class="service-description">
             Creamos <strong>páginas web personalizadas</strong>, optimizadas para SEO y adaptadas a tu marca. Diseños modernos que destacan en cualquier dispositivo y garantizan una experiencia de usuario excepcional.
           </p>
         </div>
-        <div class="service-card">
+        <div class="service-card fade-in">
           <h3 class="service-title">Chatbots Inteligentes</h3>
           <p class="service-description">
             Nuestros <strong>chatbots avanzados</strong> utilizan inteligencia artificial para automatizar procesos clave, como ventas, soporte técnico y agendado de citas. ¡Haz que tu negocio trabaje 24/7!
           </p>
         </div>
-        <div class="service-card">
+        <div class="service-card fade-in">
           <h3 class="service-title">Mantenimiento y Soporte</h3>
           <p class="service-description">
             Ofrecemos <strong>soporte técnico continuo</strong> y servicios de mantenimiento. Nos encargamos de actualizaciones, cambios y resolución de problemas para que tú te enfoques en crecer tu negocio.
           </p>
         </div>
-        <div class="service-card">
+        <div class="service-card fade-in">
           <h3 class="service-title">Automatización de Correos</h3>
           <p class="service-description">
             Configuramos sistemas de <strong>correos automatizados</strong> para dar seguimiento a tus clientes, verificar cuentas y enviar promociones. Una herramienta eficaz para fidelizar y captar clientes.
@@ -284,25 +314,25 @@
   
 
 <!-- SECCIÓN TESTIMONIOS -->
-<section class="section alt-bg" id="testimonios">
-  <h2 class="section-title">Testimonios</h2>
-  <p class="section-desc">
+<section class="section alt-bg " id="testimonios">
+  <h2 class="section-title fade-in">Testimonios</h2>
+  <p class="section-desc fade-in">
     Con FlowSiteAI, nuestros clientes transforman su presencia digital. Esto es lo que tienen que decir:
   </p>
   <div class="cards-grid">
-    <article class="card testimonial">
+    <article class="card testimonial fade-in">
       <p>
         "Gracias a FlowSiteAI, nuestro chatbot ahora responde preguntas frecuentes, agenda citas y hasta realiza ventas automáticas. ¡Hemos mejorado la experiencia de nuestros clientes y aumentado nuestras conversiones un 40%!"
       </p>
       <strong>- Andrea López, Gerente de Marketing</strong>
     </article>
-    <article class="card testimonial">
+    <article class="card testimonial fade-in">
       <p>
         "Rediseñamos nuestro sitio web con FlowSiteAI, y en menos de 3 meses, nuestras visitas orgánicas se triplicaron. Además, su enfoque en SEO nos posicionó entre los primeros resultados de búsqueda."
       </p>
       <strong>- Javier Ruiz, Propietario de Negocio</strong>
     </article>
-    <article class="card testimonial">
+    <article class="card testimonial fade-in">
       <p>
         "La automatización de correos electrónicos y la integración del chatbot nos ahorraron más de 10 horas semanales de trabajo manual. Ahora podemos enfocarnos en hacer crecer nuestro negocio mientras FlowSiteAI hace el resto."
       </p>
@@ -316,18 +346,18 @@
   <section id="chatbots" class="section">
     <div class="container chatbots-container">
       <div class="chatbot-header custom-header">
-        <p class="mini-subtitle-custom">Nuestros Servicios</p>
-        <h2 class="section-title-custom">Tipos de Chatbots</h2>
-        <p class="section-desc-custom">
+        <p class="mini-subtitle-custom fade-in">Nuestros Servicios</p>
+        <h2 class="section-title-custom fade-in">Tipos de Chatbots</h2>
+        <p class="section-desc-custom fade-in">
           Descubre nuestros chatbots diseñados para adaptarse a las necesidades
           específicas de tu negocio.
         </p>
       </div>
-      <div class="chatbot-content">
+      <div class="chatbot-content fade-in">
         <div class="chatbot-image">
           <img id="chatbot-image" src="images/sales.png" alt="Chatbot de Ventas" />
         </div>
-        <div class="chatbot-options">
+        <div class="chatbot-options fade-in">
           <div class="chatbot-tabs">
             <button
               class="chatbot-tab active"
@@ -444,19 +474,19 @@
 
   <!-- SECCIÓN PLANES (ejemplo) -->
   <section class="pricing-section alt-bg" id="planes">
-    <h2 class="section-title">Planes diseñados para cada necesidad</h2>
-    <p class="section-desc">
+    <h2 class="section-title fade-in">Planes diseñados para cada necesidad</h2>
+    <p class="section-desc fade-in">
       Escoge el plan que mejor se adapte a tu negocio y empieza a transformar tu presencia digital.
     </p>
   
-    <div class="tab-options">
+    <div class="tab-options fade-in">
       <button class="tab-btn active" onclick="switchPricing('mensual')">Mensual</button>
       <button class="tab-btn" onclick="switchPricing('anual')">Anual</button>
     </div>
   
     <div class="pricing-grid">
       <!-- Plan Básico -->
-      <div class="price-card">
+      <div class="price-card fade-in">
         <h1 class="price" data-price-mensual="USD $54" data-price-anual="USD $432">
           USD $54<span>/mes</span>
         </h1>
@@ -476,7 +506,7 @@
       </div>
   
       <!-- Plan Plus -->
-      <div class="price-card featured">
+      <div class="price-card featured fade-in">
         <div class="recommended-tag">Recomendado</div>
         <h1 class="price" data-price-mensual="USD $79" data-price-anual="USD $732">
           USD $79<span>/mes</span>
@@ -500,7 +530,7 @@
       </div>
   
       <!-- Plan Premium -->
-      <div class="price-card">
+      <div class="price-card fade-in">
         <h1 class="price" data-price-mensual="USD $155" data-price-anual="USD $1,644">
           USD $155<span>/mes</span>
         </h1>
@@ -549,11 +579,11 @@
 
   <!-- SECCIÓN BLOG (ejemplo) -->
   <section class="section" id="blog">
-    <h2 class="section-title">Blog</h2>
-    <p class="section-desc">
+    <h2 class="section-title fade-in">Blog</h2>
+    <p class="section-desc fade-in">
       Descubre las últimas tendencias en IA y redes sociales.
     </p>
-    <div class="cards-grid">
+    <div class="cards-grid fade-in">
       <!-- Artículo 1 -->
       <article class="card">
         <img src="images/chatbots.jpg" alt="Chatbots Futuro" class="blog-img" />
@@ -571,7 +601,7 @@
       </article>
 
       <!-- Artículo 2 -->
-      <article class="card">
+      <article class="card fade-in">
         <img src="images/ia.webp" alt="IA y Seguridad" class="blog-img" />
         <h3>Seguridad en Redes Sociales</h3>
         <p>
@@ -586,7 +616,7 @@
       </article>
 
       <!-- Artículo 3 -->
-      <article class="card">
+      <article class="card fade-in">
         <img src="images/social-media.jpg" alt="IA y Redes Sociales" class="blog-img" />
         <h3>La Inteligencia Artificial en Redes Sociales</h3>
         <p>
@@ -698,6 +728,22 @@
       navbar.classList.toggle("show"); // Agrega o quita la clase 'show'
       menuIcon.classList.toggle("active"); // (Opcional) Anima el ícono
     }
+  </script>
+  <!-- Script para animación al aparecer -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const fadeElements = document.querySelectorAll('.fade-in');
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, { threshold: 0.1 });
+
+      fadeElements.forEach((el) => observer.observe(el));
+    });
   </script>
 </body>
 </html>
