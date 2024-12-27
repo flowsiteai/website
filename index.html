@@ -480,15 +480,15 @@
     </p>
   
     <div class="tab-options fade-in">
-      <button class="tab-btn active" onclick="switchPricing('mensual')">Mensual</button>
+      <button class="tab-btn active" onclick="switchPricing('semestral')">Semestral</button>
       <button class="tab-btn" onclick="switchPricing('anual')">Anual</button>
     </div>
   
     <div class="pricing-grid">
       <!-- Plan Básico -->
       <div class="price-card fade-in">
-        <h1 class="price" data-price-mensual="USD $53.99" data-price-anual="USD $419.99">
-          USD $53.99<span>/mes</span>
+        <h1 class="price" data-price-semestral="USD $252.99" data-price-anual="USD $412.99">
+          USD $252.99<span>/semestral</span>
         </h1>
         <h4 class="price-type">Básico</h4>
         <p class="pricing-text">Ideal para pequeños negocios o proyectos personales que necesitan una presencia básica en internet.</p>
@@ -508,8 +508,8 @@
       <!-- Plan Plus -->
       <div class="price-card featured fade-in">
         <div class="recommended-tag">Recomendado</div>
-        <h1 class="price" data-price-mensual="USD $78.99" data-price-anual="USD $729.99">
-          USD $78.99<span>/mes</span>
+        <h1 class="price" data-price-semestral="USD $382.99" data-price-anual="USD $642.99">
+          USD $382.99<span>/semestral</span>
         </h1>
         <h4 class="price-type">Plus</h4>
         <p class="pricing-text">Perfecto para empresas en crecimiento que buscan un sitio más dinámico y funcional.</p>
@@ -530,8 +530,8 @@
   
       <!-- Plan Premium -->
       <div class="price-card fade-in">
-        <h1 class="price" data-price-mensual="USD $169.99" data-price-anual="USD $1,839.99">
-          USD $169.99<span>/mes</span>
+        <h1 class="price" data-price-semestral="USD $852.99" data-price-anual="USD $1,462.99">
+          USD $852.99<span>/semestral</span>
         </h1>
         <h4 class="price-type">Premium</h4>
         <p class="pricing-text">El plan ideal para negocios grandes que necesitan un sitio robusto y completo.</p>
@@ -555,17 +555,17 @@
   
   
   <script>
-    // Cambio de precios Mensual/Anual
+    // Cambio de precios Semestral/Anual
     function switchPricing(plan) {
       const prices = document.querySelectorAll(".price");
       const buttons = document.querySelectorAll(".tab-btn");
 
       prices.forEach((price) => {
-        const monthlyPrice = price.getAttribute("data-price-mensual");
+        const monthlyPrice = price.getAttribute("data-price-semestral");
         const annualPrice = price.getAttribute("data-price-anual");
         price.innerHTML =
-          plan === "mensual"
-            ? `${monthlyPrice}<span>/mes</span>`
+          plan === "semestral"
+            ? `${monthlyPrice}<span>/semestral</span>`
             : `${annualPrice}<span>/año</span>`;
       });
 
