@@ -207,6 +207,7 @@
       <a href="#testimonios">Testimonios</a>
       <a href="#chatbots">Chatbots</a>
       <a href="#planes">Planes</a>
+      <a href ="#proyecto-reciente">Proyectos</a>
       <a href="#blog">Blog</a>
     </nav>
 
@@ -576,8 +577,29 @@
     }
   </script>
 
+<section id="proyecto-reciente" class="section proyecto-reciente ">
+  <div class="container">
+    <h2 class="section-title fade-in">Nuestro Proyecto Más Reciente</h2>
+    <p class="section-desc fade-in">
+      Estamos orgullosos de compartir nuestro último trabajo: un diseño dinámico y encantador para el <strong>Instituto de Belleza Intercontinental</strong>. ¡Descúbrelo ahora!
+    </p>
+    <div class="proyecto-content fade-in">
+      <div class="proyecto-image">
+        <img src="images/instituto-intercontinental.png" alt="Instituto de Belleza Intercontinental" />
+      </div>
+      <div class="proyecto-details">
+        <h3>Instituto de Belleza Intercontinental</h3>
+        <p>
+          Este proyecto combina funcionalidad, diseño moderno y una experiencia de usuario intuitiva. Desde su estructura visual hasta la integración de tecnologías avanzadas, refleja nuestro compromiso con la excelencia.
+        </p>
+        <a href="https://institutointercontinental.com" target="_blank" rel="noopener noreferrer" class="button-primary">Visitar Proyecto</a>
+      </div>
+    </div>
+  </div>
+</section>
+
   <!-- SECCIÓN BLOG (ejemplo) -->
-  <section class="section" id="blog">
+  <section class="section alt-bg" id="blog">
     <h2 class="section-title fade-in">Blog</h2>
     <p class="section-desc fade-in">
       Descubre las últimas tendencias en IA y redes sociales.
@@ -630,6 +652,7 @@
       </article>
     </div>
   </section>
+  
 
  <!-- FOOTER -->
 <footer class="footer">
@@ -712,6 +735,92 @@
   @media (max-width: 768px) {
     .footer-container {
       flex-direction: column;
+      text-align: left;
+    }
+  }
+
+  .proyecto-reciente {
+    background-color: white;
+    padding: 4rem 1rem;
+  }
+
+  .proyecto-reciente .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .proyecto-reciente .section-title {
+    font-family: "Poppins", sans-serif;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+  }
+
+  .proyecto-reciente .section-desc {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    color: #666;
+  }
+
+  .proyecto-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .proyecto-image img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .proyecto-details {
+    text-align: left;
+    max-width: 600px;
+  }
+
+  .proyecto-details h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+        font-family: "Poppins", sans-serif;
+
+  }
+
+  .proyecto-details p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    font-family: "Poppins", sans-serif;
+
+  }
+
+  .button-primary {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+  }
+
+  .button-primary:hover {
+    background-color: #2a69c3;
+  }
+
+  @media (min-width: 1068px) {
+    .proyecto-content {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .proyecto-details {
       text-align: left;
     }
   }
